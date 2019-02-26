@@ -16,6 +16,12 @@ public class RomanNumeralConverter {
     }
 
     public String convertArabicToRoman(int arabicValue) {
-        return "I";
+        String romanNumeral = "";
+        for (int index = 0; index < romanNumerals.length; index++) {
+            if (arabicValues[index] == arabicValue) {
+                return romanNumerals[index];
+            }
+        }
+        return romanNumeral;
     }
 }
