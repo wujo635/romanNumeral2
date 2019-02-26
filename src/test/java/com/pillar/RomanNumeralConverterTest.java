@@ -9,16 +9,6 @@ public class RomanNumeralConverterTest {
     private RomanNumeralConverter converter = new RomanNumeralConverter();
 
     @Test
-    public void shouldConvertRomanNumeralItoArabicValue1() {
-        assertEquals(1, converter.convert("I"));
-    }
-
-    @Test
-    public void shouldConvertRomanNumeralVToArabicValue5() {
-        assertEquals(5, converter.convert("V"));
-    }
-
-    @Test
     public void shouldConvertSingleRomanNumeralsToArabicEquivalent() {
         assertEquals(1, converter.convert("I"));
         assertEquals(5, converter.convert("V"));
