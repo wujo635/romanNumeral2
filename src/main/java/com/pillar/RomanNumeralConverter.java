@@ -14,4 +14,8 @@ public class RomanNumeralConverter {
         }
         return value;
     }
+
+    public String convertArabicToRoman(int arabicValue) {
+        return "";
+    }
 }
