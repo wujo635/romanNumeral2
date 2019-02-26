@@ -30,4 +30,9 @@ public class RomanNumeralConverterTest {
         assertEquals("M", converter.convertArabicToRoman(1000));
     }
 
+    @Test
+    public void shouldDisallowConvertingNumbersGreaterThan4999() {
+        assertEquals(null, converter.convertArabicToRoman(5000));
+    }
+
 }
