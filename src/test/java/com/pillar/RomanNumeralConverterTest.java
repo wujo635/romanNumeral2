@@ -20,13 +20,14 @@ public class RomanNumeralConverterTest {
     }
 
     @Test
-    public void shouldConvertArabic1ToRomanNumeralI() {
+    public void shouldConvertArabicValuesToSingleRomanNumeral() {
         assertEquals("I", converter.convertArabicToRoman(1));
-    }
-
-    @Test
-    public void shouldConvert5toV() {
         assertEquals("V", converter.convertArabicToRoman(5));
+        assertEquals("X", converter.convertArabicToRoman(10));
+        assertEquals("L", converter.convertArabicToRoman(50));
+        assertEquals("C", converter.convertArabicToRoman(100));
+        assertEquals("D", converter.convertArabicToRoman(500));
+        assertEquals("M", converter.convertArabicToRoman(1000));
     }
 
 }
