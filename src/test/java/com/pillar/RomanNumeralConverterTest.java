@@ -24,4 +24,9 @@ public class RomanNumeralConverterTest {
         assertEquals("I", converter.convertArabicToRoman(1));
     }
 
+    @Test
+    public void shouldConvert5toV() {
+        assertEquals("V", converter.convertArabicToRoman(5));
+    }
+
 }
