@@ -2,8 +2,8 @@ package com.pillar;
 
 public class RomanNumeralConverter {
 
-    private static int[] arabicValues = new int[]{1, 5, 10, 50, 100, 500, 1000};
-    private static String[] romanNumerals = new String[]{"I", "V", "X", "L", "C", "D", "M"};
+    private static int[] arabicValues = new int[]{1000, 500, 100, 50, 10, 5, 1};
+    private static String[] romanNumerals = new String[]{"M", "D", "C", "L", "X", "V", "I"};
 
     public int convertRomanToArabic(String romanNumeral) {
         int value = -1;
@@ -16,12 +16,17 @@ public class RomanNumeralConverter {
     }
 
     public String convertArabicToRoman(int arabicValue) {
+        if (arabicValue > 4999) return null;
         String romanNumeral = "";
-        for (int index = 0; index < romanNumerals.length; index++) {
-            if (arabicValues[index] == arabicValue) {
-                return romanNumerals[index];
+        int remainingValue = arabicValue;
+        while (remainingValue > 0) {
+            for (int index = 0; index < arabicValues.length; index++) {
+                if (remainingValue >= arabicValues[index]) {
+                    romanNumeral += romanNumerals[index];
+                    remainingValue -= arabicValues[index];
+                }
             }
         }
-        return null;
+        return romanNumeral;
     }
 }
