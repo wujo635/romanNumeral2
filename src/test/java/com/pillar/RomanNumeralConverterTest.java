@@ -45,4 +45,9 @@ public class RomanNumeralConverterTest {
         assertEquals(null, converter.convertArabicToRoman(0));
     }
 
+    @Test
+    public void shouldConvertArabicValuesRequiringSubtractedRomanNumeral() {
+        assertEquals("IV", converter.convertArabicToRoman(4));
+    }
+
 }
