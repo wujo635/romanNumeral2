@@ -12,11 +12,11 @@ public class RomanNumeralConverterTest {
     public void shouldConvertSingleRomanNumeralsToArabicEquivalent() {
         assertEquals(1, converter.convertRomanToArabic("I"));
         assertEquals(5, converter.convertRomanToArabic("V"));
-        assertEquals(10,converter.convertRomanToArabic("X"));
-        assertEquals(50,converter.convertRomanToArabic("L"));
-        assertEquals(100,converter.convertRomanToArabic("C"));
-        assertEquals(500,converter.convertRomanToArabic("D"));
-        assertEquals(1000,converter.convertRomanToArabic("M"));
+        assertEquals(10, converter.convertRomanToArabic("X"));
+        assertEquals(50, converter.convertRomanToArabic("L"));
+        assertEquals(100, converter.convertRomanToArabic("C"));
+        assertEquals(500, converter.convertRomanToArabic("D"));
+        assertEquals(1000, converter.convertRomanToArabic("M"));
     }
 
     @Test
@@ -33,6 +33,11 @@ public class RomanNumeralConverterTest {
     @Test
     public void shouldDisallowConvertingNumbersGreaterThan4999() {
         assertEquals(null, converter.convertArabicToRoman(5000));
+    }
+
+    @Test
+    public void shouldConvertArabicValuesRequiringMoreThanOneNumeral() {
+        assertEquals("II", converter.convertArabicToRoman(2));
     }
 
 }
