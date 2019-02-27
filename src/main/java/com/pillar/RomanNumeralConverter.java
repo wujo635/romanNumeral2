@@ -20,13 +20,19 @@ public class RomanNumeralConverter {
         String romanNumeral = "";
         int remainingValue = arabicValue;
         while (remainingValue > 0) {
-            for (int index = 0; index < arabicValues.length; index++) {
-                if (remainingValue >= arabicValues[index]) {
-                    romanNumeral += romanNumerals[index];
-                    remainingValue -= arabicValues[index];
-                }
-            }
+            int index = findNextIndex(remainingValue);
+            romanNumeral += romanNumerals[index];
+            remainingValue -= arabicValues[index];
         }
         return romanNumeral;
+    }
+
+    private int findNextIndex(int remainingValue) {
+        for (int index = 0; index < arabicValues.length; index++) {
+            if (remainingValue >= arabicValues[index]) {
+                return index;
+            }
+        }
+        return -1;
     }
 }
