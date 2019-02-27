@@ -16,7 +16,7 @@ public class RomanNumeralConverter {
     }
 
     public String convertArabicToRoman(int arabicValue) {
-        if (arabicValue > 4999) return null;
+        if (isOutOfRomanNumeralRange(arabicValue)) return null;
         String romanNumeral = "";
         int remainingValue = arabicValue;
         while (remainingValue > 0) {
@@ -25,6 +25,10 @@ public class RomanNumeralConverter {
             remainingValue -= arabicValues[index];
         }
         return romanNumeral;
+    }
+
+    private boolean isOutOfRomanNumeralRange(int arabicValue) {
+        return arabicValue > 4999 || arabicValue < 1;
     }
 
     private int findNextIndex(int remainingValue) {
