@@ -22,6 +22,6 @@ public class RomanNumeralConverter {
                 return romanNumerals[index];
             }
         }
-        return romanNumeral;
+        return null;
     }
 }
