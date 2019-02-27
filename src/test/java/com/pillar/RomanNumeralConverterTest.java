@@ -31,13 +31,18 @@ public class RomanNumeralConverterTest {
     }
 
     @Test
-    public void shouldDisallowConvertingNumbersGreaterThan4999() {
+    public void shouldDisallowConvertingValuesGreaterThan4999() {
         assertEquals(null, converter.convertArabicToRoman(5000));
     }
 
     @Test
     public void shouldConvertArabicValuesRequiringMoreThanOneNumeral() {
         assertEquals("II", converter.convertArabicToRoman(2));
+    }
+
+    @Test
+    public void shouldDisallowConvertingValuesLessThan1() {
+        assertEquals(null, converter.convertArabicToRoman(0));
     }
 
 }
