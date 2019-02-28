@@ -60,4 +60,9 @@ public class RomanNumeralConverterTest {
         assertEquals("MDCLXVI", converter.convertArabicToRoman(1666));
     }
 
+    @Test
+    public void shouldConvertArabicValueUpYo4999() {
+        assertEquals("MMMMCMXCIX", converter.convertArabicToRoman(4999));
+    }
+
 }
