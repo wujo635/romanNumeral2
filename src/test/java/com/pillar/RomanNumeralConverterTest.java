@@ -65,4 +65,9 @@ public class RomanNumeralConverterTest {
         assertEquals("MMMMCMXCIX", converter.convertArabicToRoman(4999));
     }
 
+    @Test
+    public void shouldConvertLongestRomanNumeralUnderMaximum() {
+        assertEquals("MMMDCCCLXXXVIII", converter.convertArabicToRoman(3888));
+    }
+
 }
